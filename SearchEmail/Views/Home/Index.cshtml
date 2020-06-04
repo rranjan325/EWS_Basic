@@ -1,0 +1,48 @@
+﻿@model SearchEmail.Models.SearchCriteria
+@{
+    ViewData["Title"] = "Search Email";
+}
+
+@using (Html.BeginForm("Search", "Home",FormMethod.Post))
+{
+    <h1>Search Email</h1>
+    <table class="table">
+        <tr>
+            <td colspan="2" style="color:red">
+                @Html.ValidationSummary()
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.UserEmail)</td>
+            <td>@Html.TextBoxFor(model => model.UserEmail)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Password)</td>
+            <td>@Html.PasswordFor(model => model.Password)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.ExchangeUrl)</td>
+            <td>@Html.TextBoxFor(model => model.ExchangeUrl)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.FromDate)</td>
+            <td>@Html.EditorFor(model => model.FromDate) </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.ToDate)</td>
+            <td>@Html.EditorFor(model => model.ToDate)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.SubjectPattern)</td>
+            <td>@Html.TextBoxFor(model => model.SubjectPattern)</td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="submit" value="submit" /> </td>
+        </tr>
+
+    </table>
+}
+

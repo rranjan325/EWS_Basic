@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SearchEmail.Models.EmailItem>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+
+
+    <link href="~/css/site.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<table class="TFtable">
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTimeReceived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayCc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sender)
+            </th>
+        </tr>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeReceived)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayCc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sender)
+            </td>
+        </tr>
+}
+    <tr>
+        <td colspan="5" align="center">
+            @Html.ActionLink("Back", "Index")
+        </td>
+    </tr>
+</table>
+</body>
+</html>
